@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: auditservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: auditservice
+    spec:
+      containers:
+      - name: auditservice
+        image: pelger/auditservice:ca42511
+        ports:
+        - containerPort: 8081
+
