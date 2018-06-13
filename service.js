@@ -5,7 +5,8 @@ module.exports = function () {
   var url
 
   function init () {
-    conc.dns.resolve('_mongo._tcp.mongo.micro.svc.cluster.local', function (err, result) {
+    // conc.dns.resolve('_mongo._tcp.mongo.micro.svc.cluster.local', function (err, result) {
+    conc.dns.resolve('_mongo._tcp.mongo.micro.internal', function (err, result) {
       if (err) { console.log(err) }
       url = 'mongodb://' + result[0].host + ':' + result[0].port + '/audit'
     })
